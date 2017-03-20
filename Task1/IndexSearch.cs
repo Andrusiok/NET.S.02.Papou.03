@@ -28,6 +28,7 @@ namespace Task1
         private static int FindElementIndex(int[] array)
         {
             if (CheckIsEmpty(array)) throw new NullReferenceException();
+            if (array.Length >= 1000) throw new ArgumentOutOfRangeException();
 
             for (int i=0; i<array.Length; i++)
                 if (FindSum(array, 0, i) == FindSum(array, i + 1, array.Length))

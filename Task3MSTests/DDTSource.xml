@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <Destination>8</Destination>
+    <Source>15</Source>
+    <StartIndex>0</StartIndex>
+    <EndIndex>0</EndIndex>
+    <ExpectedResult>9</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>0</Destination>
+    <Source>15</Source>
+    <StartIndex>30</StartIndex>
+    <EndIndex>30</EndIndex>
+    <ExpectedResult>1073741824</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>0</Destination>
+    <Source>15</Source>
+    <StartIndex>0</StartIndex>
+    <EndIndex>30</EndIndex>
+    <ExpectedResult>15</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>2147483647</Destination>
+    <Source>2147483647</Source>
+    <StartIndex>3</StartIndex>
+    <EndIndex>5</EndIndex>
+    <ExpectedResult>2147483647</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>15</Destination>
+    <Source>2147483647</Source>
+    <StartIndex>3</StartIndex>
+    <EndIndex>5</EndIndex>
+    <ExpectedResult>63</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>15</Destination>
+    <Source>15</Source>
+    <StartIndex>1</StartIndex>
+    <EndIndex>3</EndIndex>
+    <ExpectedResult>15</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>15</Destination>
+    <Source>15</Source>
+    <StartIndex>1</StartIndex>
+    <EndIndex>4</EndIndex>
+    <ExpectedResult>31</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Destination>15</Destination>
+    <Source>-15</Source>
+    <StartIndex>0</StartIndex>
+    <EndIndex>4</EndIndex>
+    <ExpectedResult>17</ExpectedResult>
+    <!--Неправильные ожидаемые данные-->
+  </TestCase>
+  <TestCase>
+    <Destination>15</Destination>
+    <Source>-15</Source>
+    <StartIndex>1</StartIndex>
+    <EndIndex>4</EndIndex>
+    <ExpectedResult>3</ExpectedResult>
+    <!--Неправильные ожидаемые данные-->
+  </TestCase>
+  <TestCase>
+    <Destination>-8</Destination>
+    <Source>-15</Source>
+    <StartIndex>1</StartIndex>
+    <EndIndex>4</EndIndex>
+    <ExpectedResult>-30</ExpectedResult>
+    <!--Неправильные ожидаемые данные-->
+  </TestCase>
+</TestCases>

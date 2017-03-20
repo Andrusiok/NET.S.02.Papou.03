@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <Destination>8</Destination>
+    <Source>15</Source>
+    <StartIndex>-1</StartIndex>
+    <EndIndex>5</EndIndex>
+  </TestCase>
+  <TestCase>
+    <Destination>8</Destination>
+    <Source>15</Source>
+    <StartIndex>5</StartIndex>
+    <EndIndex>-1</EndIndex>
+  </TestCase>
+  <TestCase>
+    <Destination>8</Destination>
+    <Source>15</Source>
+    <StartIndex>31</StartIndex>
+    <EndIndex>5</EndIndex>
+    <!--Данные корректны-->
+  </TestCase>
+  <TestCase>
+    <Destination>8</Destination>
+    <Source>15</Source>
+    <StartIndex>5</StartIndex>
+    <EndIndex>31</EndIndex>
+    <!--Выдает ArgumentException-->
+  </TestCase>
+</TestCases>

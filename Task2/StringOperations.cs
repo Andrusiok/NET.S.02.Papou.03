@@ -8,10 +8,6 @@ namespace Task2
 {
     public static class StringOperations
     {
-        #region private fields and constants
-        private const string alphabet = "abcdefhijklmnopqrstuvwxyz";
-        #endregion
-
         #region public methods
         /// <summary>
         /// Concates two strings. Removes symbols that aren't present in the alphabet. Sorts resulted string in ascending order.
@@ -33,11 +29,14 @@ namespace Task2
         /// <returns>new concatenated string</returns>
         private static string ConcateStrings(string firstString, string secondString)
         {
+            const string alphabet = "abcdefhijklmnopqrstuvwxyz";
             string buffer;
             string resultString = "";
 
-            if (CheckIsEmpty(firstString)) throw new NullReferenceException();
-            if (CheckIsEmpty(secondString)) throw new NullReferenceException();
+            if (ReferenceEquals(firstString, null)) throw new NullReferenceException();
+            if (ReferenceEquals(secondString, null)) throw new NullReferenceException();
+            if (firstString == string.Empty) throw new ArgumentException();
+            if (secondString == string.Empty) throw new ArgumentException();
 
             buffer = firstString + secondString;
             foreach(char letter in buffer)
@@ -45,17 +44,6 @@ namespace Task2
                     if (!CheckIsPresent(letter, resultString)) resultString += letter;
 
             return SortString(resultString);
-        }
-
-        /// <summary>
-        /// Checks given string for emptyness
-        /// </summary>
-        /// <param name="subject">subject string</param>
-        /// <returns>true if string is empty otherwise returns false</returns>
-        private static bool CheckIsEmpty(string subject)
-        {
-            if (ReferenceEquals(subject, null)) return true;
-            return false;
         }
 
         /// <summary>

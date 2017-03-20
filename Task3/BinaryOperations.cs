@@ -37,11 +37,12 @@ namespace Task3
             BitArray destinationBits = new BitArray(BitConverter.GetBytes(destination));
             BitArray sourceBits = new BitArray(BitConverter.GetBytes(source));
 
-            if (startIndex < endIndex) throw new ArgumentOutOfRangeException();
             if (destinationBits.Length<endIndex) throw new ArgumentOutOfRangeException();
+            if (startIndex<0||endIndex<0) throw new ArgumentOutOfRangeException();
+            if (startIndex > endIndex) throw new ArgumentException();
 
             int j = 0;
-            for (int i=0; i<endIndex+1; i++)
+            for (int i=startIndex; i<endIndex+1; i++)
             {
                 destinationBits[i] = sourceBits[j];
                 j++;
