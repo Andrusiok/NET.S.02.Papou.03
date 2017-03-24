@@ -20,29 +20,15 @@ namespace Task3
         /// <returns>changed destination int</returns>
         public static int Insert(int destination, int source, int startIndex, int endIndex)
         {
-            return InsertNumber(destination, source, startIndex, endIndex);
-        }
-        #endregion
-        #region private methods
-        /// <summary>
-        /// Private method inserts bits from sorce int to destination int starting from index
-        /// </summary>
-        /// <param name="destination">destination int</param>
-        /// <param name="source">source int</param>
-        /// <param name="startIndex">start index of destination int bits</param>
-        /// <param name="endIndex">end index of destination int bits</param>
-        /// <returns>changed destination int</returns>
-        private static int InsertNumber(int destination, int source, int startIndex, int endIndex)
-        {
             BitArray destinationBits = new BitArray(BitConverter.GetBytes(destination));
             BitArray sourceBits = new BitArray(BitConverter.GetBytes(source));
 
-            if (destinationBits.Length<endIndex) throw new ArgumentOutOfRangeException();
-            if (startIndex<0||endIndex<0) throw new ArgumentOutOfRangeException();
+            if (destinationBits.Length < endIndex) throw new ArgumentOutOfRangeException();
+            if (startIndex < 0 || endIndex < 0) throw new ArgumentOutOfRangeException();
             if (startIndex > endIndex) throw new ArgumentException();
 
             int j = 0;
-            for (int i=startIndex; i<endIndex+1; i++)
+            for (int i = startIndex; i < endIndex + 1; i++)
             {
                 destinationBits[i] = sourceBits[j];
                 j++;

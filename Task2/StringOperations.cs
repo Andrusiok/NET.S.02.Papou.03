@@ -17,35 +17,23 @@ namespace Task2
         /// <returns>new concatenated string</returns>
         public static string Concate(string firstString, string secondString)
         {
-            return ConcateStrings(firstString, secondString);
-        }
-        #endregion
-        #region private methods
-        /// <summary>
-        /// Private method that implements string concatenation and sorting
-        /// </summary>
-        /// <param name="firstString">first string</param>
-        /// <param name="secondString">second string</param>
-        /// <returns>new concatenated string</returns>
-        private static string ConcateStrings(string firstString, string secondString)
-        {
-            const string alphabet = "abcdefhijklmnopqrstuvwxyz";
             string buffer;
             string resultString = "";
 
-            if (ReferenceEquals(firstString, null)) throw new NullReferenceException();
-            if (ReferenceEquals(secondString, null)) throw new NullReferenceException();
+            if (ReferenceEquals(firstString, null)) throw new ArgumentNullException();
+            if (ReferenceEquals(secondString, null)) throw new ArgumentNullException();
             if (firstString == string.Empty) throw new ArgumentException();
             if (secondString == string.Empty) throw new ArgumentException();
 
             buffer = firstString + secondString;
-            foreach(char letter in buffer)
-                if (CheckIsPresent(letter, alphabet))
+            foreach (char letter in buffer)
+                if (char.IsLetter(letter))
                     if (!CheckIsPresent(letter, resultString)) resultString += letter;
 
             return SortString(resultString);
         }
-
+        #endregion
+        #region private methods
         /// <summary>
         /// Checks letter for presence in subject string
         /// </summary>

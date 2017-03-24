@@ -70,9 +70,9 @@ namespace NUnit.Tests
         [TestCase(null, "abcde")]
         [TestCase("edcba", null)]
         [TestCase(null, null)]
-        public void Concate_ThrowsNullReferenceException(string firstString, string secondString)
+        public void Concate_ThrowsArgumentNullException(string firstString, string secondString)
         {
-            Assert.Throws<NullReferenceException>(() => StringOperations.Concate(firstString, secondString));
+            Assert.Throws<ArgumentNullException>(() => StringOperations.Concate(firstString, secondString));
         }
 
         [TestCase("", "abcde")]
@@ -99,9 +99,9 @@ namespace NUnit.Tests
         }
 
         [TestCase(null)]
-        public void FindIndex_NullReferenceExeption(int[] array)
+        public void FindIndex_ArgumentNullExeption(int[] array)
         {
-            Assert.Throws<NullReferenceException>(() => IndexSearch.FindIndex(array));
+            Assert.Throws<ArgumentNullException>(() => IndexSearch.FindIndex(array));
         }
 
         [TestCase]

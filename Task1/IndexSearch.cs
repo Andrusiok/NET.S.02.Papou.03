@@ -16,27 +16,17 @@ namespace Task1
         /// <returns>Index of the first fitting element</returns>
         public static int FindIndex(int[] array)
         {
-            return FindElementIndex(array);
-        }
-        #endregion
-        #region private methods
-        /// <summary>
-        /// Private method that implements FindIndex method
-        /// </summary>
-        /// <param name="array">Your array</param>
-        /// <returns>Index of the first fitting element</returns>
-        private static int FindElementIndex(int[] array)
-        {
-            if (CheckIsEmpty(array)) throw new NullReferenceException();
+            if (ReferenceEquals(array, null)) throw new ArgumentNullException();
             if (array.Length >= 1000) throw new ArgumentOutOfRangeException();
 
-            for (int i=0; i<array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
                 if (FindSum(array, 0, i) == FindSum(array, i + 1, array.Length))
                     return i;
 
             return -1;
         }
-
+        #endregion
+        #region private methods
         /// <summary>
         /// Private method that finds sum of the elements form left index till right index
         /// </summary>
@@ -52,17 +42,6 @@ namespace Task1
                 sum += array[i];
 
             return sum;
-        }
-
-        /// <summary>
-        /// Checks array for emptyness
-        /// </summary>
-        /// <param name="array">Your array</param>
-        /// <returns>true if array is empty otherwise returns false</returns>
-        private static bool CheckIsEmpty(int[] array)
-        {
-            if (ReferenceEquals(array, null)) return true;
-            return false;
         }
         #endregion
     }
